@@ -1,13 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice-Roller</title>
-</head>
-<body>
-    
+    <style>
+        body {
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            min-height: 100vh;
+        }
 
-    <img src="/images/default.png" alt="">
+        .dice-img {
+            height: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .app-title {
+            text-align: center;
+        }
+
+        .btn-roll {
+            width: 200px;
+            display: block;
+            margin: 20px auto;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: rgb(114, 3, 3);
+            color: #fff;
+            font-weight: 900;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="app-title">Roll The Dice</h1>
+    <img src="/images/default.png" class="dice-img" alt="" id="dice-img">
+    <button class="btn-roll" onclick="roll()">Roll Dice</button>
+
+
+
+
+
+    <script>
+
+
+        function roll() {
+            const min = 1;
+            const max = 6;
+
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+            // console.log(randomNumber);
+            const imgElement = document.getElementById('dice-img');
+            switch (randomNumber) {
+                case 1: imgElement.src = "/images/1.png";
+                    console.log(randomNumber);
+                    break;
+                case 2: imgElement.src = "/images/2.png";
+                    console.log(randomNumber);
+
+                    break;
+                case 3: imgElement.src = "/images/3.png";
+                    console.log(randomNumber);
+
+                    break;
+                case 4: imgElement.src = "/images/4.png";
+                    console.log(randomNumber);
+
+                    break;
+                case 5: imgElement.src = "/images/5.png";
+                    console.log(randomNumber);
+
+                    break;
+                case 6: imgElement.src = "/images/6.png";
+            }
+
+        }
+
+
+    </script>
 </body>
+
 </html>
