@@ -21,6 +21,7 @@
             text-align: center;
         }
 
+        
         .btn-roll {
             width: 200px;
             display: block;
@@ -32,6 +33,22 @@
             color: #fff;
             font-weight: 900;
             cursor: pointer;
+        }
+        .animate{
+            animation:roll is infinite;
+        }
+
+
+
+
+
+        @keyframes roll{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -78,6 +95,7 @@
                     break;
                 case 6: imgElement.src = "/images/6.png";
             }
+            imgElement.classList.add('animate')
 
         }
 
